@@ -634,7 +634,7 @@ a {
 .about-masthead-content {
   position: relative;
   z-index: 2;
-  padding: 4rem 0;
+  padding: 8rem 0 4rem;
   color: white;
 }
 
@@ -942,7 +942,6 @@ a {
 }
 
 /* ==================== CONTACT PAGE ==================== */
-/* Completely different: split screen, minimalist, functional form */
 
 .contact-split {
   display: grid;
@@ -950,56 +949,120 @@ a {
   min-height: 100vh;
 }
 
+/* Left Side */
 .contact-left {
-  background: #fafafa;
+  background: #0d0643;
   display: flex;
-  align-items: center;
-  padding: 6rem 3rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-left::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(245, 127, 57, 0.2);
+}
+
+.contact-left::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -60px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.06);
 }
 
 .contact-left-inner {
-  max-width: 480px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #f57f39;
+  margin-bottom: 1.5rem;
 }
 
 .contact-left h1 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 900;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
-  color: #111;
+  margin-bottom: 1.2rem;
+  color: #fff;
   letter-spacing: -0.03em;
 }
 
-.contact-left > div > p {
-  color: #666;
-  font-size: 1.1rem;
+.contact-left h1 span {
+  color: #f57f39;
+}
+
+.contact-left-inner > p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 3rem;
 }
 
+/* Contact info items */
 .contact-direct {
-  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .direct-item {
-  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.direct-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(245, 127, 57, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.direct-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .direct-label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #888;
-  margin-bottom: 0.3rem;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .direct-item a,
 .direct-item span {
-  color: #111;
-  font-size: 1.1rem;
+  color: #fff;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -1007,19 +1070,25 @@ a {
   color: #f57f39;
 }
 
+/* Social pills */
 .contact-social {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.8rem;
+  flex-wrap: wrap;
 }
 
 .contact-social a {
-  color: #888;
-  font-size: 0.9rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: all 0.3s;
 }
 
 .contact-social a:hover {
+  border-color: #f57f39;
   color: #f57f39;
 }
 
@@ -1027,38 +1096,59 @@ a {
 .contact-right {
   background: #fff;
   display: flex;
-  align-items: center;
-  padding: 6rem 3rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 4rem;
 }
 
 .contact-form {
   width: 100%;
   max-width: 480px;
-  margin: 0 auto;
+}
+
+.form-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.4rem;
+}
+
+.form-sub {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .form-group label {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: #111;
-  margin-bottom: 0.5rem;
+  color: #333;
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.02em;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.9rem 1rem;
-  border: 1px solid #eee;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid #eee;
   border-radius: 12px;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.95rem;
   background: #fafafa;
+  color: #111;
   transition: all 0.3s;
 }
 
@@ -1068,11 +1158,19 @@ a {
   outline: none;
   border-color: #f57f39;
   background: #fff;
+  box-shadow: 0 0 0 3px rgba(245, 127, 57, 0.08);
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 110px;
+}
+
+.response-note {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-top: 1rem;
 }
 
 /* ==================== FOOTER ==================== */

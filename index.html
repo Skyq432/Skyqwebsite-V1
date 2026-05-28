@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sky Q | Consulting, Marketing & Tech</title>
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/png" href="/logofavicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
@@ -20,7 +20,6 @@
         <a href="#home" data-nav>Home</a>
         <a href="#about" data-nav>About</a>
         <a href="#services" data-nav>Services</a>
-        <a href="#team" data-nav>Team</a>
         <a href="#contact" data-nav>Contact</a>
       </nav>
       <a href="#contact" class="nav-cta" data-nav>Get Started</a>
@@ -419,24 +418,33 @@
     <section class="contact-split">
       <div class="contact-left">
         <div class="contact-left-inner">
-          <span class="section-tag">Get in Touch</span>
-          <h1>Let's build<br>something<br>great.</h1>
+          <span class="contact-tag">Get in Touch</span>
+          <h1>Let's build<br>something<br><span>great.</span></h1>
           <p>Have a project in mind? Fill out the form and we'll get back to you within 24 hours.</p>
           
-          <div class="contact-direct">
-            <div class="direct-item">
-              <span class="direct-label">Call us</span>
-              <a href="tel:+2347026710999">+234 702 6710 999</a>
+               <div class="contact-direct">
+              <div class="direct-item">
+                <div class="direct-icon">📞</div>
+                <div class="direct-info">
+                  <span class="direct-label">Call us</span>
+                  <a href="tel:+2347026710999">+234 702 6710 999</a>
+                </div>
+              </div>
+              <div class="direct-item">
+                <div class="direct-icon">✉️</div>
+                <div class="direct-info">
+                  <span class="direct-label">Email us</span>
+                  <a href="mailto:Skyq432@gmail.com">Skyq432@gmail.com</a>
+                </div>
+              </div>
+              <div class="direct-item">
+                <div class="direct-icon">📍</div>
+                <div class="direct-info">
+                  <span class="direct-label">Visit us</span>
+                  <span>10, Shasha Akowonjo roundabout,<br>Beside Thermocool Showroom, Lagos</span>
+                </div>
+              </div>
             </div>
-            <div class="direct-item">
-              <span class="direct-label">Email us</span>
-              <a href="mailto:Skyq432@gmail.com">Skyq432@gmail.com</a>
-            </div>
-            <div class="direct-item">
-              <span class="direct-label">Visit us</span>
-              <span>10, Shasha Akowonjo roundabout,<br>Beside Thermocool Showroom, Lagos</span>
-            </div>
-          </div>
 
           <div class="contact-social">
             <a href="https://www.instagram.com/skyq432" target="_blank">Instagram</a>
@@ -447,6 +455,8 @@
       </div>
 
       <div class="contact-right">
+       <p class="form-heading">Send us a message</p>
+        <p class="form-sub">We typically respond within one business day.</p>
         <form class="contact-form" id="contactForm">
           <div class="form-group">
             <label for="name">Your Name</label>
